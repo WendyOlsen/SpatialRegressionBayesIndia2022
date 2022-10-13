@@ -1,7 +1,7 @@
 # childlabourtutorial
 A Tutorial for Statistics Users about Children Working, Focused on Methods for Social Researchers
 
-</size = +2> How to use this tutorial</size>
+<font size = "+2"> How to use this tutorial</size>
 
 Bayesian statistics for social scientists, a four-part Introduction with Exercises
 
