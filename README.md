@@ -1,4 +1,4 @@
-# childlabourtutorial
+# childlabourtutorial2018
 A Tutorial for Statistics Users about Children Working, Focused on Methods for Social Researchers
 
 <font size = "+2"> How to use this tutorial</size>
