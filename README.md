@@ -1,27 +1,33 @@
-# childlabourtutorial2018
-A Tutorial for Statistics Users about Children Working, Focused on Methods for Social Researchers
+# SpatialRegressionBayesIndia2022
+A Tutorial for Statistics Users about India Labour-Force Participation Rates, Focused on Methods for Social Researchers
 
       * * * * * * * * * * HOW TO GET ALL THE FILES * * * * 
 
-Just click the green CODE button first of all. Now choose the 'Download ZIP' button. It will give you all the documents in one zip file.  You then 'extract' this using your unzip software, such as 7ZIP freeware or Win-ZIP.  Queries/difficulties? Contact me, wendy.olsen@manchester.ac.uk to simply get an emailed copy. 
+First click the green CODE button. Now choose the 'Download ZIP' button. You obtain all the documents in one zip file.  You then 'extract' this using your unzip software, such as 7ZIP freeware or Win-ZIP.  Queries/difficulties? Contact me, wendy.olsen@manchester.ac.uk to simply get an emailed copy. 
 
         * * * * * * * * * SUMMARY OF THE CONTENTS OF THE 4 TUTORIAL FILES * * * * * * * *
         
-Title:  Bayesian Statistics for Social Scientists via an Introduction with Exercises
+Title: Spatial Regression With Bayesian Estimation in STAN for Labour-Force Participation in India: an Introduction and Tutorial
 
-These four helpful files on Introductory Bayesian social statistics include:
---  one Exercises document,
---   one background 2-page Poster in powerpoint (PDF) about Bayesian modelling methods, and
---   two sets of 40 Powerpoint slides.
-Use all these for self-managed learning. Or hold a workshop and learn together!
+We provided the webinar on 17 Oct. 2022 (Eventbrite https://www.eventbrite.co.uk/e/spatial-and-poisson-models-of-risk-of-events-a-methods-webinar-tickets-439488561117?utm-campaign=social&utm-content=attendeeshare&utm-medium=discovery&utm-term=listing&utm-source=cp&aff=escb) 
+
+The files include:
+--   two sets of 40 Powerpoint slides
+--   one Tutorial guide, providing some sketchy answers to the set tasks
+--   one background case-study (PDF) about spatial regression via Bayesian MCMC modelling methods, led by Dr. Diego Perez Ruiz
+--   Figures, code, dataset for ages 15-24 in India 2017/8 and 2018/9
+--   Full code for cleaning the India data yourself to study any other aspect of Indian society using 'Periodic Labour-Force Survey' 2017/8 or 2018/9.
+Use all these for self-managed learning. 
+
+We are ready to take your questions via email. 
 
 In all, this set of materials might take up to three hours to read through at a rapid or superficial level. In the powerpoint slides, there are 2 options
-1) start at basics of defining child labour; then
-2) start using regression models. 
-We provide more detail on your learning time inputs for each objective.
-For a typical UK based social scientist, it may take 6 weeks at 10 hours a week to learn to model child labour risk factors using these methods. It will take less if your mathematics is very good, or more if you are not familiar with data-processing software (such as SPSS, Stata, or R). And, for those without any programming background... this tutorial with two powerpoint slide packs can help you get started:-  it really works! - Wendy Olsen
+For a typical social scientist or social demographer, it could take 6 weeks at 10 hours a week to learn to use R for programming STAN to apply these methods.
+It may be easier ifyou use R's brms package or lme4 to do simpler models first. 
+These might be multilevel models with a spatial level j.
+BEGINNERS' NOTE: For those without any programming background...a separte tutorial in 2018 helped by providing two powerpoint slidesets - that repository is HelpBayesianStatisticsTutorial2018.   - Wendy Olsen
 
-Use this citation for creative commons attribution: Wisniowski, Arkadiusz, Diego Perez Ruiz, Madhu Chauhan, and Wendy Olsen (2022), "childlabourtutorial", learning materials, URL www.github.com/WendyOlsen/childlabourtutorial, Creative Commons, University of Manchester, accessed 2022.
+Use this citation for creative commons attribution: Wisniowski, Arkadiusz, Diego Perez Ruiz, Madhu Chauhan, and Wendy Olsen (2022), "Spatial Regression Using Bayesian Methods With Indian Data 2022", learning materials, URL www.github.com/WendyOlsen/SpatialRegressionBayesIndia2022, Creative Commons, University of Manchester, accessed 2022.
 
 
 #Some of our background papers may help you:
