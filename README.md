@@ -1,17 +1,19 @@
 # childlabourtutorial2018
 A Tutorial for Statistics Users about Children Working, Focused on Methods for Social Researchers
 
-<font size = "+2"> How to use this tutorial</size>
+      * * * * * * * * * * HOW TO GET ALL THE FILES * * * * 
 
-Bayesian statistics for social scientists, a four-part Introduction with Exercises
+Just click the green CODE button first of all. Now choose the 'Download ZIP' button. It will give you all the documents in one zip file.  You then 'extract' this using your unzip software, such as 7ZIP freeware or Win-ZIP.  Queries/difficulties? Contact me, wendy.olsen@manchester.ac.uk to simply get an emailed copy. 
+
+        * * * * * * * * * SUMMARY OF THE CONTENTS OF THE 4 TUTORIAL FILES * * * * * * * *
+        
+Title:  Bayesian Statistics for Social Scientists via an Introduction with Exercises
 
 These four helpful files on Introductory Bayesian social statistics include:
-   one Exercises document,
-   one background 2-page Poster in powerpoint (PDF) about Bayesian modelling methods, and
-   two sets of 40 Powerpoint slides.
+--  one Exercises document,
+--   one background 2-page Poster in powerpoint (PDF) about Bayesian modelling methods, and
+--   two sets of 40 Powerpoint slides.
 Use all these for self-managed learning. Or hold a workshop and learn together!
-
-
 
 In all, this set of materials might take up to three hours to read through at a rapid or superficial level. In the powerpoint slides, there are 2 options
 1) start at basics of defining child labour; then
