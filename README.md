@@ -45,4 +45,8 @@ Anita Hammer, Wendy Olsen and Janroj Keles, “Working Lives in India: Past insi
 and best of all,
 ** Kim, Jihye, Olsen, W.K. and Arkadiusz Wisniowski (2020), A Bayesian Estimation of Child Labour in India, Child Indicators Research, DOI https://doi.org/10.1007/s12187-020-09740-w. Online 8 June. ** 
 
+* Acknowledgement of Funding
+
+This research was supported by the School of Social Sciences at the University of Manchester ** Research Support Funds 2021-22 **
+Part of this research has been disrupted by the effects of the COVID-19 pandemic.
 
