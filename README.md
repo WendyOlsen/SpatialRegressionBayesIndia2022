@@ -47,6 +47,7 @@ and best of all,
 
 * Acknowledgement of Funding
 
-This research was supported by the School of Social Sciences at the University of Manchester **Research Support Funds 2021-22**
+This research was supported by **Research Support Funds 2021-22** at the School of Social Sciences at the University of Manchester.
+
 Part of this research has been disrupted by the effects of the COVID-19 pandemic.
 
