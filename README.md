@@ -23,9 +23,9 @@ We are ready to take your questions via email.
 
 In all, this set of materials might take up to three hours to read through at a rapid or superficial level. In the powerpoint slides, there are 2 options
 For a typical social scientist or social demographer, it could take 6 weeks at 10 hours a week to learn to use R for programming STAN to apply these methods.
-It may be easier ifyou use R's brms package or lme4 to do simpler models first. 
+It may be easier if you use R's brms package or lme4 to do simpler models first. 
 These might be multilevel models with a spatial level j.
-BEGINNERS' NOTE: For those without any programming background...a separte tutorial in 2018 helped by providing two powerpoint slidesets - that repository is HelpBayesianStatisticsTutorial2018.   - Wendy Olsen
+BEGINNERS' NOTE: For those without any programming background...a separate tutorial in 2018 helped by providing two powerpoint slidesets - that repository is HelpBayesianStatisticsTutorial2018.   - Wendy Olsen
 
 Use this citation for creative commons attribution: Wisniowski, Arkadiusz, Diego Perez Ruiz, Madhu Chauhan, and Wendy Olsen (2022), "Spatial Regression Using Bayesian Methods With Indian Data 2022", learning materials, URL www.github.com/WendyOlsen/SpatialRegressionBayesIndia2022, Creative Commons, University of Manchester, accessed 2022.
 
