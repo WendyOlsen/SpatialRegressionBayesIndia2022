@@ -45,6 +45,14 @@ Anita Hammer, Wendy Olsen and Janroj Keles, “Working Lives in India: Past insi
 and best of all,
 ** Kim, Jihye, Olsen, W.K. and Arkadiusz Wisniowski (2020), A Bayesian Estimation of Child Labour in India, Child Indicators Research, DOI https://doi.org/10.1007/s12187-020-09740-w. Online 8 June. ** 
 
+* Data Sources:
+
+The Indian Periodic Labour Force Survey 2017/8 is used here. It is open access via this website:
+https://mospi.gov.in/web/mospi/download-tables-data/-/reports/view/templateOne/29001?q=TBDCAT  (accessed July 2022).
+You will note some active hot links inside a key table in this site. These provide unlabelled tabular data. The dictionary is then used to code the labels onto the data.
+
+Similarly for 2018/9. 
+
 * Acknowledgement of Funding
 
 This research was supported by **Research Support Funds 2021-22** at the School of Social Sciences at the University of Manchester.
