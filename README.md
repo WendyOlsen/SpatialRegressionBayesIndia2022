@@ -1,11 +1,11 @@
 # SpatialRegressionBayesIndia2022
 A Tutorial for Statistics Users about India Labour-Force Participation Rates, Focused on Methods for Social Researchers
 
-      * * * * * * * * * * HOW TO GET ALL THE FILES * * * * 
+      * * * * * HOW TO GET THE FILES *  
 
-First click the green CODE button. Now choose the 'Download ZIP' button. You obtain all the documents in one zip file.  You then 'extract' this using your unzip software, such as 7ZIP freeware or Win-ZIP.  Queries/difficulties? Contact me, wendy.olsen@manchester.ac.uk to simply get an emailed copy. 
+First click the green CODE button. Now choose the 'Download ZIP' button. You obtain all the documents in one zip file.  You then 'extract' this using your unzip software, such as 7ZIP freeware or Win-ZIP.  Queries/difficulties? Contact wendy.olsen@manchester.ac.uk to simply get an emailed copy. 
 
-        * * * * * * * * * SUMMARY OF THE CONTENTS OF THE 4 TUTORIAL FILES * * * * * * * *
+     * * * *  SUMMARY OF THE CONTENTS OF THE 4 TUTORIAL FILES * * * * *
         
 Title: Spatial Regression With Bayesian Estimation in STAN for Labour-Force Participation in India: an Introduction and Tutorial
 
@@ -13,11 +13,11 @@ We provided the webinar on 17 Oct. 2022 (Eventbrite https://www.eventbrite.co.uk
 
 The files include:
 --   two sets of 40 Powerpoint slides
---   one Tutorial guide, providing some sketchy answers to the set tasks
---   one background case-study (PDF) about spatial regression via Bayesian MCMC modelling methods, led by Dr. Diego Perez Ruiz
+--   one Tutorial guide, providing some sketchy answers to the set tasks@
+--   one background case-study (PDF) about spatial regression via Bayesian MCMC modelling methods, led by Dr. Diego Perez Ruiz@
 --   Figures, code, dataset for ages 15-24 in India 2017/8 and 2018/9
 --   Full code for cleaning the India data yourself to study any other aspect of Indian society using 'Periodic Labour-Force Survey' 2017/8 or 2018/9.
-Use all these for self-managed learning. 
+Use all these for self-managed learning. @Some items will be added during Oct/Nov/Dec. 2022. 
 
 We are ready to take your questions via email. 
 
