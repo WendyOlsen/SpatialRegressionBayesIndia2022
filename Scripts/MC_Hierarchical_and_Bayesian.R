@@ -1,4 +1,4 @@
-
+# Calculations of the Intra-class correlation coefficient (ICC) whoen below are based on:
 #https://www.barelysignificant.com/post/icc/
 
 
@@ -13,10 +13,12 @@ library(ggeffects)
 library(sjPlot)
 
 
-setwd("~/Dropbox/ArkadDiegoWOMadhuonSOSS/Data")
+setwd("SpatialRegressionBayesIndia2022")
 
-India_Employment <- read_csv("sampledPLFS201718.csv")
+#read in a sample from the PLFS 2017-18 data
+India_Employment <- read_csv("Data/sampledPLFS201718.csv")
 
+# filter out missing sex
 India_Employment <- India_Employment %>% filter( sex != "3")
   
 head(India_Employment)
