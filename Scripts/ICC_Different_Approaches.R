@@ -1,6 +1,14 @@
+#Authors 2023
+#Diego Perez Ruiz has written this code in 2021/2022.    A few minor amendments by Wendy Olsen help us access data for different 
+#age groups, years, or sex.
+
+#Furthermore, the advisor on all the materials is Arkadiusz Wisniowski, and the research assistant in 2021/22 was Madhu Chauhan.
+
+#We thank the funder, University of Manchester - School of Social Sciences. 
 
 #https://www.barelysignificant.com/post/icc/
 
+#The command below is  used for 2018/2019 Periodic Labour Force Survey data (India). 
 
 rm(list=ls())
 
@@ -12,14 +20,29 @@ library(performance)
 library(ggeffects)
 library(sjPlot)
 
+setwd("C:/data/SpatialBayesian2023newFiles/data")
+Indiaraw<- readRDS("IndiaPLFS201718.rds")
+# previously had used  India_Employment <- read_csv("data/sampledPLFS201718.csv")  in 2022
+set.seed(123456)
+Indiaraw <- Indiaraw[sample(nrow(Indiaraw), 20000), ]
+#   Archive: in previous 2022 round we used this file instead. Indiaraw <- read_csv("data/sampledPLFS201718.rds")
+Indiaraw %>% count(female)
+# filter out very few cases of other or missing sex
+Indiaraw <- Indiaraw %>% filter( sex != "3")
+India_Employment<-Indiaraw
 
-setwd("~/Dropbox/ArkadDiegoWOMadhuonSOSS/Data")
+#Now proceed with the ICC routines.
+setwd("c:/data/SpatialBayesian2023newFiles")
 
-India_Employment <- read_csv("sampledPLFS201718.csv")
 
-India_Employment <- India_Employment %>% filter( sex != "3")
-
-head(India_Employment)
+#* * *****************Here, you can choose to use only certain age groups, or just one sex.* * * * 
+#* 
+summary(India_Employment$rural)
+summary(India_Employment$female)
+summary(India_Employment$age)
+India_Employmentbak<-India_Employment
+India_Employment <- India_Employment[India_Employment$age<31&India_Employment$age>15,]
+summary(India_Employment$age)
 
 ### - Do for States and District 
 #Representation at District Level 
@@ -126,3 +149,4 @@ sig2 <- tau2 * p^2 * (1 + exp(est[1] ) )^(-2)
 ICC3.f <- sig2 / (sig1 + sig2)
 
 ICC3.f
+

@@ -1,13 +1,55 @@
+#Authors 2023
+#Diego Perez Ruiz has written this code in 2021/2022.    A few minor amendments by Wendy Olsen help us access data for different 
+#age groups, years, or sex.
 
+#Furthermore, the advisor on all the materials is Arkadiusz Wisniowski, and the research assistant in 2021/22 was Madhu Chauhan.
+
+#We thank the funder, University of Manchester - School of Social Sciences. 
 rm(list=ls())
 
-pkgs <- c("sf", "spdep", "INLA", "rstan", "tidyverse")
-lapply(pkgs, require, character.only = TRUE)
+#The first line is optional and is done once on your PC. It's a special package. Done.
+#install.packages("INLA",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+
+#For those using 4.1 or older versions of R, try this instead of the above line 11.  This might not hang:
+#remotes::install_version("INLA", version="22.05.03",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/testing"), dep=TRUE)
+#pkgs <- c("sf", "spdep", "INLA", "rstan", "tidyverse")    #or: 
+#pkgs <- c("sf", "spdep", "rstan", "tidyverse")
+#lapply(pkgs, require, character.only = TRUE)
+library(sf)
+library(spdep)
+library(rstan)
+library(tidyverse)
+library(arm)
+library(MASS)
+library(lme4)
+library(performance)
+library(ggeffects)
+library(sjPlot)
 rstan_options(javascript=FALSE)
 
-setwd("~/Dropbox/SOST-Recovery Grant/Scripts")
+setwd("C:/data/SpatialBayesian2023newFiles/data")
+Indiaraw<- readRDS("IndiaPLFS201718.rds")
+set.seed(123456)
+Indiaraw <- Indiaraw[sample(nrow(Indiaraw), 20000), ]
 
+#   Archive: in previous 2022 round we used this file instead. Indiaraw <- read_csv("data/sampledPLFS201718.rds")
+Indiaraw %>% count(female)
+
+# filter out very few cases of other or missing sex
+Indiaraw <- Indiaraw %>% filter( sex != "3")
+India_Employment<-Indiaraw
+## # # #  Elements found in Script1cleanandmerge.R file: (pseudocode)
+#We have added census variables to the existing file using a left_join.
+##We added a 4 digit combined state-district variable; add state names to the dataset by extracting state code and name from
+#the India Census 2011 shape file.
+
+#save(India_Sample_Employment, file="C:/data/SpatialBayesian2023newFiles/data/India_Employment_withCensus2011.rda")
+
+#Please note. A sample was taken at an earlier stage.  For the full data, work from your own raw files.  
+
+setwd("C:/data/SpatialBayesian2023newFiles/scripts")
 source("icar-functions.R")
+setwd("C:/data/SpatialBayesian2023newFiles")
 
 ## the commented-out code will set you up to use the same data as in the README document
 ## get a shapefile
@@ -22,24 +64,39 @@ source("icar-functions.R")
 # load data: from Spatial Epi package, a data.frame and a shapefile
 library(SpatialEpi)
 
-setwd("~/Dropbox/ArkadDiegoWOMadhuonSOSS/Data")
+setwd("C:/data/SpatialBayesian2023newFiles/Data")
+#Note this file may not have today's cleaning commands run on it.
 
-India_Employment <- load(file = "India_Employment_withCensus2011.rda")
+#* * *****************Here, you can choose to use only certain age groups, or just one sex.* * * * 
+#* check, remove, and check again.
+head(India_Employment)
+summary(India_Employment$rural)
+summary(India_Employment$female)
+summary(India_Employment$age)
+India_Employmentbak<-India_Employment
+India_Employment <- India_Employment[India_Employment$age<31&India_Employment$age>15,]
+summary(India_Employment$age)
 
+#Current stage:  make sure the district merge codes match in type, and exist. 
+
+str(India_Employment$distcode)
 dim(India_Employment)
+India_Employment$censuscode = as.numeric(India_Employment$distcode)
 
 rstan_options(auto_write = TRUE)
 
-setwd("~/Dropbox/SOST-Recovery Grant/maps-master/Districts/Census_2011")
+setwd("C:/data/SpatialBayesian2023newFiles/maps-master/Districts/Census_2011")
 
-India_Districs <- st_read("2011_Dist.shp")
+India_Districts <- st_read("2011_Dist.shp")
 
 sf::sf_use_s2(FALSE)
 
-sp <- India_Districs$geometry
+sp <- India_Districts$geometry
 
-India_Data_Emplotment_Census2011 <- left_join(India_Districs,India_Sample_Employment, by = "censuscode" )
+India_Data_Employment_Census2011 <- left_join(India_Districts,India_Employment, by = "censuscode" )
 
+#Set the working directory back to the scripts area. 
+setwd("C:/data/SpatialBayesian2023newFiles/scripts")
 
 ## prep data for ICAR function in Stan
 C <- spdep::nb2mat(spdep::poly2nb(sp, queen = TRUE), style = "B", zero.policy = TRUE)
@@ -66,30 +123,30 @@ icar.data$inv_sqrt_scale_factor <- 1 / sqrt( scale_factor )
 
 ## see the new values
 print(icar.data$inv_sqrt_scale_factor)
-
+#Error if they all appear as Inf
 
 #India_Employment_District <- India_Employment %>%
 #  group_by(distcode) %>%
 #  summarise(Freq_District = sum(medwork)) 
 
 
-n <- nrow(India_Data_Emplotment_Census2011)
-
-India_Data_Emplotment_Census2011$Freq_State[is.na(India_Data_Emplotment_Census2011$Freq_State)] <- 0
+n <- nrow(India_Data_Employment_Census2011)
+#Below, an error if we have not calculated Freq_State*
+India_Data_Employment_Census2011$Freq_State[is.na(India_Data_Employment_Census2011$Freq_State)] <- 0
   
 dl <- list(
   n = n,
   prior_only = 0, # ignore the data, sample from the joint prior probability of parameters
-  y = India_Data_Emplotment_Census2011$Freq_State , # just a placeholder
+  y = India_Data_Employment_Census2011$Freq_State , # just a placeholder
   offset = rep(1, n) # placeholder  
 )
 
 
 dl <- c(dl, icar.data)
 
-setwd("~/Dropbox/SOST-Recovery Grant/Scripts")
-
-source("icar-functions.R")
+#The work of installing the ICAR functions was done earlier.  DELETE THESE 2 LINES: 
+#####setwd("~/Dropbox/SOST-Recovery Grant/Scripts")
+#####source("icar-functions.R")
 
 ## compile the model
 BYM2 <- stan_model("BYM2.stan")
@@ -144,8 +201,8 @@ library("ggcorrplot")
  
 corr <- round(cor(phi.samples), 1)
 
-colnames(corr) <- India_Districs$DISTRICT #NULL
-rownames(corr) <- India_Districs$DISTRICT #NULL
+colnames(corr) <- India_Districts$DISTRICT #NULL
+rownames(corr) <- India_Districts$DISTRICT #NULL
 
 
 #ggcorrplot(corr, 
@@ -178,7 +235,7 @@ corrplot(corr[highlyCorrelated ,highlyCorrelated ], method = 'square', diag = FA
 #cont <- states[-drop.idx, ]
 #phi_variance <- phi.var[-drop.idx]
 
-ggplot(India_Districs) +
+ggplot(India_Districts) +
   geom_sf(aes(fill=log(phi.var))) +
   scale_fill_gradient(
     low = "white",
